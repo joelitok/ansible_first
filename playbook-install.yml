@@ -1,0 +1,19 @@
+---
+- name: install web server
+  hosts: web
+  remote_user: root
+  vars:
+    user: tchoufa
+  tasks:
+    - name: installation of app 
+      apt: name={{ item }} update_cache=yes state=lastest
+      with_items:
+        -vim
+        -htop
+        -git
+        -zsh
+    - name: creat remote_user
+      user: name={{user}} comment="Mon user" shell=/usr/bin/zsh
+    - name: add keys ssh 
+      authorized_key: user={{user}} key="{{lookup('file','~/.ssh/id_rsa.pub')}}" #for this line user can be able to connect using my keys
+

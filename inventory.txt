@@ -1,0 +1,4 @@
+[web]
+ansible_host=192.100.16.17 ansible_ssh_pass=osboxes.org ansible_user=osboxes
+ansible_host=192.100.16.18 ansible_ssh_pass=osboxes.org ansible_user=osboxes
+ansible_host=192.100.16.19 ansible_ssh_pass=osboxes.org ansible_user=osboxes
